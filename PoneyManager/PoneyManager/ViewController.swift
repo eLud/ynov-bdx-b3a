@@ -10,9 +10,14 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    @IBOutlet weak var nameTextField: UITextField!
+    @IBOutlet weak var weightTextField: UITextField!
+    @IBOutlet weak var genderSelector: UISegmentedControl!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -20,6 +25,26 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
-
+    //Actions
+    @IBAction func createPoney(_ sender: UIButton) {
+        
+        guard let name = nameTextField.text else { return }
+        guard let weightString = weightTextField.text, let weightInt = Int(weightString) else { return }
+        
+        let genderIndex = genderSelector.selectedSegmentIndex
+        var gender: String? = nil
+        
+        switch genderIndex {
+        case 0:
+            gender = "Male"
+        case 1:
+            gender = "Female"
+        default:
+            break
+        }
+        
+        print(name, weightInt, gender)
+    }
+    
 }
 
