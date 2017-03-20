@@ -12,6 +12,8 @@
 		338EB4031E8030F8002B3FAA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 338EB4011E8030F8002B3FAA /* Main.storyboard */; };
 		338EB4051E8030F8002B3FAA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 338EB4041E8030F8002B3FAA /* Assets.xcassets */; };
 		338EB4081E8030F8002B3FAA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 338EB4061E8030F8002B3FAA /* LaunchScreen.storyboard */; };
+		338EB4101E8047F3002B3FAA /* Poney.swift in Sources */ = {isa = PBXBuildFile; fileRef = 338EB40F1E8047F3002B3FAA /* Poney.swift */; };
+		338EB4121E80480B002B3FAA /* Enclos.swift in Sources */ = {isa = PBXBuildFile; fileRef = 338EB4111E80480B002B3FAA /* Enclos.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +24,8 @@
 		338EB4041E8030F8002B3FAA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		338EB4071E8030F8002B3FAA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		338EB4091E8030F8002B3FAA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		338EB40F1E8047F3002B3FAA /* Poney.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Poney.swift; sourceTree = "<group>"; };
+		338EB4111E80480B002B3FAA /* Enclos.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Enclos.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +60,8 @@
 			children = (
 				338EB3FD1E8030F8002B3FAA /* AppDelegate.swift */,
 				338EB3FF1E8030F8002B3FAA /* ViewController.swift */,
+				338EB40F1E8047F3002B3FAA /* Poney.swift */,
+				338EB4111E80480B002B3FAA /* Enclos.swift */,
 				338EB4011E8030F8002B3FAA /* Main.storyboard */,
 				338EB4041E8030F8002B3FAA /* Assets.xcassets */,
 				338EB4061E8030F8002B3FAA /* LaunchScreen.storyboard */,
@@ -138,7 +144,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				338EB4001E8030F8002B3FAA /* ViewController.swift in Sources */,
+				338EB4101E8047F3002B3FAA /* Poney.swift in Sources */,
 				338EB3FE1E8030F8002B3FAA /* AppDelegate.swift in Sources */,
+				338EB4121E80480B002B3FAA /* Enclos.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
