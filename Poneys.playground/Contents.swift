@@ -10,8 +10,13 @@ struct Poney {
     var poids: Float
     
     //A implementer pour avoir des constructeurs
-    init(name: String, poids: Float) {
+    init?(name: String, poids: Float) {
         // self est l'équivalent de this
+        
+        if poids < 0 {
+            return nil
+        }
+        
         self.name = name
         self.poids = poids
         age = 0
@@ -35,7 +40,7 @@ struct Poney {
     }
 }
 
-var p1 = Poney(name: "Gilbert", poids: 60)
+var p1 = Poney(name: "Gilbert", poids: 60)!
 p1.vieilli(increment: 3)
 
 class Enclos {
@@ -82,6 +87,36 @@ enclos.ajoute(p1)
 enclos.liste()
 enclos.nouvelleAnnée()
 enclos.liste()
+
+var str = "42"
+
+
+
+if let intValue = Int(str) {
+    let result = intValue * 2
+}
+
+var img: Optional<UIImage>  = UIImage(named: "yrtdtr")
+
+img = nil
+
+
+
+guard let intValue = Int(str) else { fatalError() }
+intValue * 2
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
