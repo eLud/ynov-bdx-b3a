@@ -14,6 +14,8 @@ class ViewController: UIViewController {
     @IBOutlet weak var weightTextField: UITextField!
     @IBOutlet weak var genderSelector: UISegmentedControl!
     
+    let enclos = Enclos()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -29,7 +31,7 @@ class ViewController: UIViewController {
     @IBAction func createPoney(_ sender: UIButton) {
         
         guard let name = nameTextField.text else { return }
-        guard let weightString = weightTextField.text, let weightInt = Int(weightString) else { return }
+        guard let weightString = weightTextField.text, let weightInt = Float(weightString) else { return }
         
         let genderIndex = genderSelector.selectedSegmentIndex
         var gender: String? = nil
@@ -44,6 +46,10 @@ class ViewController: UIViewController {
         }
         
         print(name, weightInt, gender)
+        guard let p = Poney(name: name, poids: weightInt) else { return }
+        
+        enclos.ajoute(p)
+        print(enclos.liste())
     }
     
 }
