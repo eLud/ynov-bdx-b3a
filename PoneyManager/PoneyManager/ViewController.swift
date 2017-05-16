@@ -16,7 +16,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var ageSlider: UISlider!
     @IBOutlet weak var ageLabel: UILabel!
     
-    let enclos = Enclos()
+    var enclos: Enclos?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -41,6 +41,7 @@ class ViewController: UIViewController {
     
     @IBAction func createPoney(_ sender: UIButton) {
         
+        guard let enclos = enclos  else { fatalError("No enclos !") }
         guard let name = nameTextField.text else { return }
         guard let weightString = weightTextField.text, let weightInt = Float(weightString) else { return }
         
