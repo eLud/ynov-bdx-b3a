@@ -13,6 +13,8 @@ class ViewController: UIViewController {
     @IBOutlet weak var nameTextField: UITextField!
     @IBOutlet weak var weightTextField: UITextField!
     @IBOutlet weak var genderSelector: UISegmentedControl!
+    @IBOutlet weak var ageSlider: UISlider!
+    @IBOutlet weak var ageLabel: UILabel!
     
     let enclos = Enclos()
     
@@ -28,28 +30,42 @@ class ViewController: UIViewController {
     }
 
     //Actions
+    @IBAction func ageSliderDidChange(_ sender: UISlider) {
+        
+        let intValue = Int(sender.value)
+        ageLabel.text = String(intValue)
+        
+        // "Crante" le slider
+        sender.value = Float(intValue)
+    }
+    
     @IBAction func createPoney(_ sender: UIButton) {
         
         guard let name = nameTextField.text else { return }
         guard let weightString = weightTextField.text, let weightInt = Float(weightString) else { return }
         
         let genderIndex = genderSelector.selectedSegmentIndex
-        var gender: String? = nil
+        var gender: Gender
         
         switch genderIndex {
         case 0:
-            gender = "Male"
+            gender = .male
         case 1:
-            gender = "Female"
+            gender = .female
         default:
-            break
+            gender = .undefined
         }
         
         print(name, weightInt, gender)
-        guard let p = Poney(name: name, poids: weightInt) else { return }
+        guard let p = Poney(name: name, poids: weightInt, age: Int(ageSlider.value), gender: gender) else { return }
+        
+        var male = Gender.male
+        male = .female
         
         enclos.ajoute(p)
         print(enclos.liste())
+        
+        dismiss(animated: true, completion: nil)
     }
     
 }

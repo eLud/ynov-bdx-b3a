@@ -6,6 +6,23 @@
 //  Copyright © 2017 Ludovic Ollagnier. All rights reserved.
 //
 
+enum Gender {
+    case male
+    case female
+    case undefined
+    
+    func stringValue() -> String {
+        switch self {
+        case .male:
+            return "Male"
+        case .female:
+            return "Female"
+        default:
+            return "Undefined"
+        }
+    }
+}
+
 struct Poney {
     
     //Une struct génere un init automatiquement
@@ -13,8 +30,10 @@ struct Poney {
     var age: Int
     var poids: Float
     
+    var gender: Gender
+    
     //A implementer pour avoir des constructeurs
-    init?(name: String, poids: Float) {
+    init?(name: String, poids: Float, age: Int, gender: Gender) {
         // self est l'équivalent de this
         
         if poids < 0 {
@@ -23,12 +42,13 @@ struct Poney {
         
         self.name = name
         self.poids = poids
-        age = 0
+        self.age = age
+        self.gender = gender
     }
     
     func mange(aliment: String, heure: Int) {
         //Concat avec + si 2 String, ou inclusion avec \()
-        let message = "Je mange de " + aliment + " à \(heure) heure"
+        let message: String = "Je mange de " + aliment + " à \(heure) heure"
         print(message)
     }
     
