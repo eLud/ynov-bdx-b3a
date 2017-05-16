@@ -15,6 +15,11 @@ class PoneysTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        let notCenter = NotificationCenter.default
+        notCenter.addObserver(forName: Notification.Name("modelUpdated"), object: nil, queue: nil) { (_) in
+            self.tableView.reloadData()
+        }
+        
         for i in 0...10 {
             
             let randomInt = Int(arc4random_uniform(12))
